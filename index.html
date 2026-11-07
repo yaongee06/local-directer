@@ -1,0 +1,1674 @@
+<!doctype html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>창직 혁신 랩 | 미래 신직업 랜딩페이지</title>
+  <meta name="description" content="창직 보고서 기반 신직업 발굴 및 비즈니스 모델 런칭을 위한 완성형 인터랙티브 랜딩페이지" />
+  <meta property="og:title" content="창직 혁신 랩 | 미래 신직업 랜딩페이지" />
+  <meta property="og:description" content="창직 보고서 기반 신직업 발굴 및 비즈니스 모델 런칭을 위한 완성형 인터랙티브 랜딩페이지" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans KR & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans KR"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+          colors: {
+            stone: {
+              50: '#FAF9F6',
+              100: '#F5F3EF',
+              200: '#E7E4DC',
+              300: '#D3CEBE',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FAF9F6;
+      color: #1E293B;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1EFEA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+  </style>
+</head>
+<body class="bg-[#FAF9F6] text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900 min-h-screen flex flex-col">
+
+  <!-- 1. Top Navigation Bar (Strict 3-Zone Contract) -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-stone-200/90 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-8 h-18">
+        <!-- Zone 1: Single text wordmark -->
+        <a href="#" class="text-lg font-bold tracking-tight text-slate-900 whitespace-nowrap shrink-0 flex items-center gap-2 group">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-600 group-hover:scale-125 transition-transform"></span>
+          <span class="font-extrabold tracking-tight">CREATE JOB STUDIO</span>
+        </a>
+
+        <!-- Zone 2: 5 single-line navigation links -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+          <a href="#overview" class="hover:text-slate-950 transition-colors whitespace-nowrap shrink-0">창직 개요</a>
+          <a href="#core-tasks" class="hover:text-slate-950 transition-colors whitespace-nowrap shrink-0">4대 핵심직무</a>
+          <a href="#target-matrix" class="hover:text-slate-950 transition-colors whitespace-nowrap shrink-0">타깃 & 가치</a>
+          <a href="#business-model" class="hover:text-slate-950 transition-colors whitespace-nowrap shrink-0">비즈니스 모델</a>
+          <a href="#roadmap" class="hover:text-slate-950 transition-colors whitespace-nowrap shrink-0">실행 로드맵</a>
+        </nav>
+
+        <!-- Zone 3: 1 primary action button + Quick customizer toggle -->
+        <div class="flex items-center gap-3 shrink-0">
+          <button id="btnOpenCustomizerNav" class="hidden lg:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-700 bg-white border border-stone-300 rounded-lg hover:bg-stone-50 transition-colors whitespace-nowrap shrink-0" title="창직보고서 내용 실시간 수정 및 프리셋 전환">
+            <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            <span>보고서 커스터마이징</span>
+          </button>
+          <button id="btnOpenInquiryNav" class="px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors shadow-sm whitespace-nowrap shrink-0">
+            프로젝트 상담 신청
+          </button>
+          <button id="btnToggleMobileMenu" class="md:hidden p-2 text-slate-700 hover:text-slate-950" aria-label="메뉴 열기">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden border-b border-stone-200 bg-[#FAF9F6] px-4 pt-2 pb-6 space-y-3">
+      <div id="mobileJobTitleIndicator" class="text-xs text-slate-500 font-medium pb-1 border-b border-stone-200">
+        현재 모델: AI 로컬 팝업스토어 기획자
+      </div>
+      <a href="#overview" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 hover:text-slate-900">창직 개요</a>
+      <a href="#core-tasks" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 hover:text-slate-900">4대 핵심직무</a>
+      <a href="#target-matrix" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 hover:text-slate-900">타깃 & 가치</a>
+      <a href="#business-model" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 hover:text-slate-900">비즈니스 모델</a>
+      <a href="#roadmap" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 hover:text-slate-900">실행 로드맵</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button id="btnOpenCustomizerMobile" class="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-medium text-slate-700 bg-white border border-stone-300 rounded-lg">
+          <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          창직보고서 내용 실시간 수정
+        </button>
+        <button id="btnOpenInquiryMobile" class="w-full py-2.5 text-xs font-semibold text-white bg-slate-900 rounded-lg">
+          프로젝트 상담 신청
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Top Interactive Report Indicator Banner -->
+  <div class="bg-amber-900/90 text-amber-50 py-3.5 px-4 sm:px-6 lg:px-8 border-y border-amber-950/40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2 text-center sm:text-left">
+        <svg class="w-4 h-4 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <span>
+          현재 열람 중인 보고서: <strong id="bannerJobTitle" class="font-bold text-white">AI 로컬 팝업스토어 기획자</strong> (<span id="bannerCreatorName">이아영 창직 기획가</span> · <span id="bannerInstitution">국립한밭대학교 창직 이노베이션 프로젝트</span>)
+        </span>
+      </div>
+
+      <button id="btnOpenCustomizerBanner" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-800/80 hover:bg-amber-800 text-amber-100 hover:text-white border border-amber-700/80 transition-colors shrink-0">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+        <span>내 보고서 내용으로 실시간 교체하기</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="flex-1">
+    <!-- 3. Hero Section -->
+    <section class="relative pt-12 pb-16 lg:pt-16 lg:pb-24 overflow-hidden border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Top Unboxed Metadata -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-medium text-amber-800 mb-6">
+          <span>신직업 창출(창직) 보고서 모델</span>
+          <span aria-hidden="true" class="text-stone-400">·</span>
+          <span id="heroCategory">공간 활성화 · 로컬 커머스 마케팅 & AI 융합</span>
+          <span aria-hidden="true" class="text-stone-400">·</span>
+          <span id="heroCreator">이아영 창직 기획가</span>
+          <span aria-hidden="true" class="text-stone-400">·</span>
+          <span id="heroInstitution" class="text-stone-500">국립한밭대학교 창직 이노베이션 프로젝트</span>
+        </div>
+
+        <!-- 2-Column Split Hero -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 flex flex-col justify-center">
+            <h1 id="heroJobTitle" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12] mb-5 [text-wrap:balance]">
+              AI 로컬 팝업스토어 기획자
+            </h1>
+
+            <p id="heroEnglishTitle" class="text-sm sm:text-base font-semibold tracking-wide text-amber-700 uppercase mb-4">
+              AI Local Pop-up Store Director
+            </p>
+
+            <p id="heroPitch" class="text-lg sm:text-xl text-slate-700 leading-relaxed font-normal mb-8 max-w-2xl">
+              예비 청년 창업가들이 비싼 임대료 없이 자신의 아이템을 테스트할 수 있도록, 도서관 로비나 청년 공간 등 지역 내 유휴 공간을 단기 팝업스토어로 기획하고 운영을 대행하는 신직업
+            </p>
+
+            <!-- CTA Group -->
+            <div class="flex flex-wrap items-center gap-4 mb-10">
+              <button id="btnOpenInquiryHero" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-xl shadow-sm hover:shadow transition-all whitespace-nowrap shrink-0 group">
+                <span>프로젝트 협업 & 상담 신청</span>
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+              </button>
+
+              <button id="btnOpenCustomizerHero" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-slate-700 bg-white hover:bg-stone-50 border border-stone-300 rounded-xl transition-colors whitespace-nowrap shrink-0">
+                <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                <span>내 창직보고서 내용 직접 반영하기</span>
+              </button>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="pt-6 border-t border-stone-200/90 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-600">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>공공 유휴공간 실증 검증</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>3D 모듈러 팝업 특허 출원</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>민관 상생 수익모델 구축</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Media Photo -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200/80 bg-white">
+              <img id="heroImageElement" src="/src/assets/images/hero_local_popup_store_1794011341517.jpg" alt="AI 로컬 팝업스토어 기획 현장" class="w-full h-[360px] sm:h-[420px] object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                <div class="flex items-center gap-2 text-xs font-medium text-amber-300 mb-1">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  <span>공공도서관 로비 팝업 빌리지 실증</span>
+                </div>
+                <h3 id="heroImageCardTitle" class="text-lg font-bold leading-tight">
+                  AI 로컬 팝업스토어 기획자 프로젝트 랩
+                </h3>
+                <p id="heroImageCardDesc" class="text-xs text-slate-200 mt-1 line-clamp-2">
+                  청년 창업가 턴키 지원 및 공공 유휴 공간 가치 재생 워크스페이스
+                </p>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-4 -left-4 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl border border-stone-200 shadow-md">
+              <div class="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center text-amber-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-semibold text-slate-900">창직보고서 표준 규격</div>
+                <div class="text-[11px] text-slate-500">배경 · 직무 · BM · 로드맵 통합</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Item Proof KPI Strip -->
+        <div class="mt-16 pt-8 border-t border-stone-200/80 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-white/80 p-5 rounded-xl border border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+            <div class="text-xs font-medium text-slate-500 mb-1">시장 타당성 검증률</div>
+            <div id="kpiValidation" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono tabular-nums">97.4%</div>
+            <div class="text-[11px] text-stone-500 mt-1">전문가 심의 및 청년 설문 기반</div>
+          </div>
+          <div class="bg-white/80 p-5 rounded-xl border border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+            <div class="text-xs font-medium text-slate-500 mb-1">목표 잠재 시장 규모</div>
+            <div id="kpiMarketSize" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono tabular-nums">₩2,400억</div>
+            <div class="text-[11px] text-stone-500 mt-1">전국 팝업 및 공공 유휴공간 활성화</div>
+          </div>
+          <div class="bg-white/80 p-5 rounded-xl border border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+            <div class="text-xs font-medium text-slate-500 mb-1">1년차 목표 사업화 매출</div>
+            <div id="kpiRevenue" class="text-2xl sm:text-3xl font-extrabold text-amber-700 font-mono tabular-nums">₩9,200만</div>
+            <div class="text-[11px] text-stone-500 mt-1">팝업 대행 및 지자체 위탁 용역</div>
+          </div>
+          <div class="bg-white/80 p-5 rounded-xl border border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+            <div class="text-xs font-medium text-slate-500 mb-1">협력 공공·지자체 거점</div>
+            <div id="kpiPartners" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono tabular-nums">16개 공공 거점</div>
+            <div class="text-[11px] text-stone-500 mt-1">도서관·청년센터·문화회관 연계</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Background & Necessity (01. 창직 배경 및 사회적 필요성) -->
+    <section id="overview" class="py-20 lg:py-28 bg-[#FAF9F6] border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">CHAPTER 01</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 [text-wrap:balance]">
+            01. 창직 배경 및 사회적 필요성
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            기존의 고정 임대료 상가 체계로는 감당하기 어려웠던 청년 창업가들의 초기 진입 장벽을 해소하고,
+            공공도서관 로비와 청년센터 등 방치된 유휴 공간에 새로운 상업·문화적 활기를 불어넣습니다.
+          </p>
+        </div>
+
+        <!-- 4 Bento Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-14">
+          <!-- Card 1: Problem -->
+          <div class="bg-white p-8 rounded-2xl border border-stone-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-700 mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+              </div>
+              <div class="text-xs font-medium text-rose-800 mb-1">기존 시장의 한계와 미해결 과제</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">초기 청년 창업가의 높은 임대료 데스밸리</h3>
+              <p id="bgProblem" class="text-slate-600 text-sm leading-relaxed">
+                초기 청년 창업가들이 신제품과 브랜드를 오프라인 시장에서 검증하고자 할 때, 높은 상가 보증금과 월 임대료, 수백만 원에 달하는 인테리어 고정비는 치명적인 데스밸리(Death Valley) 요인이 됩니다. 반면 지자체 산하 공공도서관 로비, 청년센터, 주민 커뮤니티 공간 등 우수한 접근성을 가진 유휴 공간들은 주말 및 특정 시간대에 활기 없이 방치되고 있습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-slate-500 font-medium">
+              핵심 과제: 무보증금 단기 테스트베드 공간화
+            </div>
+          </div>
+
+          <!-- Card 2: Shift -->
+          <div class="bg-white p-8 rounded-2xl border border-stone-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <div class="text-xs font-medium text-blue-800 mb-1">사회 · 산업 패러다임의 대전환</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">AI 빅데이터와 모듈러 기술 기반의 초경량화</h3>
+              <p id="bgSocial" class="text-slate-600 text-sm leading-relaxed">
+                온라인 이커머스의 광고비 급증으로 오프라인 체험형 팝업의 중요성이 커진 가운데, 생성형 AI와 상권 유동인구 빅데이터 기술의 발달로 1인 창직가도 대기업 수준의 3D 공간 시뮬레이션과 초지역(Hyper-local) 타깃 마케팅을 신속하게 실행할 수 있는 기술적 환경이 갖추어졌습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-slate-500 font-medium">
+              패러다임: 3D 모듈러 팝업 및 AI 상권 매칭
+            </div>
+          </div>
+
+          <!-- Card 3: Opportunity -->
+          <div class="bg-white p-8 rounded-2xl border border-stone-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-700 mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </div>
+              <div class="text-xs font-medium text-amber-800 mb-1">신시장 창출 및 경제적 기회</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">지자체 청년 일자리 정책과 팝업 수요의 융합</h3>
+              <p id="bgMarket" class="text-slate-600 text-sm leading-relaxed">
+                청년 창업 생태계의 팝업 테스트 수요가 폭발하고 있으며, 지자체와 공공기관 역시 청년 일자리 창출 및 공공시설 유휴 공간 활성화를 위한 매칭 지원 사업을 전폭 확대하고 있어 민관 양방향 시장이 고속 팽창하고 있습니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-slate-500 font-medium">
+              시장 잠재력: 지자체 청년지원 공모 사업 연계
+            </div>
+          </div>
+
+          <!-- Card 4: Human Value -->
+          <div class="bg-white p-8 rounded-2xl border border-stone-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 mb-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/></svg>
+              </div>
+              <div class="text-xs font-medium text-emerald-800 mb-1">인간 고유의 대체 불가능한 정체성</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">지역 주민과의 공감과 현장 운영 감성 큐레이션</h3>
+              <p id="bgHuman" class="text-slate-600 text-sm leading-relaxed">
+                AI 알고리즘이 예측한 상권 데이터 위에 청년 창업가의 브랜드 철학을 담아내고, 지역 주민과의 정서적 유대감을 엮어내는 인간 중심의 공간 연출과 따뜻한 현장 운영 대행의 가치입니다.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-stone-100 text-xs text-slate-500 font-medium">
+              차별성: 로컬 스토리텔링과 현장 대면 교감
+            </div>
+          </div>
+        </div>
+
+        <!-- Human Quote Callout -->
+        <div class="bg-stone-900 text-white rounded-2xl p-8 sm:p-10 relative overflow-hidden">
+          <div class="relative z-10 max-w-3xl">
+            <svg class="w-8 h-8 text-amber-400 mb-4 opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="text-lg sm:text-xl font-medium leading-relaxed text-stone-100 mb-4">
+              &ldquo;임대료가 없어도 도전할 수 있어야 청년의 꿈이 멈추지 않습니다. 지역의 텅 빈 공공 로비에 AI와 모듈러 기술을 입혀, 청년 창업가가 세상과 만나는 첫 번째 무대를 만들어갑니다.&rdquo;
+            </p>
+            <div class="flex items-center gap-3 text-xs text-stone-400">
+              <span id="quoteAuthor" class="font-semibold text-stone-200">이아영 창직 기획가</span>
+              <span aria-hidden="true">·</span>
+              <span id="quoteInstitution">국립한밭대학교 창직 프로젝트</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-amber-400 font-medium">AI 로컬 팝업스토어 기획자 제안서 발췌</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Core Services Section (02. 4대 핵심 직무 및 서비스 체계) -->
+    <section id="core-tasks" class="py-20 lg:py-28 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">CHAPTER 02</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 [text-wrap:balance]">
+            02. 4대 핵심 직무 및 서비스 체계
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            AI 상권 빅데이터 분석, 3D 모듈러 공간 설계, 하이퍼로컬 마케팅, 그리고 현장 운영 대행에 이르기까지
+            원스톱으로 체계화된 전문 창직 직무 체계입니다.
+          </p>
+        </div>
+
+        <!-- Task Selector Tabs -->
+        <div id="tasksTabContainer" class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Main Task Detailed Showcase Card -->
+        <div class="bg-[#FAF9F6] rounded-2xl border border-stone-200/90 p-6 sm:p-8 lg:p-10 mb-16">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-2 text-xs font-semibold text-amber-800 mb-2">
+                <span id="activeTaskNumber" class="font-mono">01</span>
+                <span aria-hidden="true">·</span>
+                <span>핵심 직무 스펙</span>
+              </div>
+              <h3 id="activeTaskTitle" class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                AI 상권 빅데이터 분석 및 최적 공공 유휴 공간 매칭
+              </h3>
+              <p id="activeTaskSubtitle" class="text-sm sm:text-base font-medium text-amber-800 mb-5">
+                도서관 로비·청년센터·공공 복합관의 시간대별 유동인구 및 방문자 연령대 정밀 분석
+              </p>
+              <p id="activeTaskDesc" class="text-slate-700 text-sm sm:text-base leading-relaxed mb-6">
+                지자체 인허가 규정을 준수하면서 청년 창업가의 타깃 고객과 가장 부합하는 지역 내 유휴 공공 공간을 AI 공간 매칭 알고리즘으로 발굴하고 공간 사용 협약을 체결합니다.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-stone-200">
+                <div>
+                  <div class="text-xs font-bold text-slate-900 mb-3 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>주요 제공 산출물 (Deliverables)</span>
+                  </div>
+                  <ul id="activeTaskDeliverables" class="space-y-2 text-xs text-slate-700"></ul>
+                </div>
+
+                <div>
+                  <div class="text-xs font-bold text-slate-900 mb-3 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+                    <span>전문 툴킷 & 프레임워크 (Tools)</span>
+                  </div>
+                  <ul id="activeTaskTools" class="space-y-2 text-xs text-slate-700"></ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Visual Image -->
+            <div class="lg:col-span-5">
+              <div class="rounded-xl overflow-hidden border border-stone-200 shadow-md bg-white">
+                <img id="taskServiceImage" src="/src/assets/images/service_popup_modular_design_1794011341495.jpg" alt="모듈러 팝업 부스 설계" class="w-full h-[280px] sm:h-[320px] object-cover" />
+                <div class="p-4 bg-white border-t border-stone-100">
+                  <div class="text-xs font-bold text-slate-900">친환경 모듈러 부스 & 세일즈 데이터 실시간 대시보드</div>
+                  <div class="text-[11px] text-slate-500 mt-0.5">2시간 내 설치/철거 가능한 이동식 키트 및 실시간 클라우드 POS 연동</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Stage Operational Flow -->
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">SERVICE WORKFLOW</div>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-8">팝업스토어 런칭 4단계 표준 프로세스</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-[#FAF9F6] p-6 rounded-xl border border-stone-200">
+              <div class="font-mono text-2xl font-black text-amber-700 mb-3">01</div>
+              <h4 class="text-base font-bold text-slate-900 mb-2">공간 섭외 및 AI 상권 매칭</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">도서관 로비 등 공공 유휴 공간의 사용 승인 및 유동인구 데이터를 분석해 최적 입지를 선정합니다.</p>
+            </div>
+            <div class="bg-[#FAF9F6] p-6 rounded-xl border border-stone-200">
+              <div class="font-mono text-2xl font-black text-amber-700 mb-3">02</div>
+              <h4 class="text-base font-bold text-slate-900 mb-2">3D 모듈러 부스 & 비주얼 설계</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">생성형 3D 툴로 친환경 모듈러 전시 집기를 가상 배치하고 최적 고객 동선을 설계합니다.</p>
+            </div>
+            <div class="bg-[#FAF9F6] p-6 rounded-xl border border-stone-200">
+              <div class="font-mono text-2xl font-black text-amber-700 mb-3">03</div>
+              <h4 class="text-base font-bold text-slate-900 mb-2">하이퍼로컬 AI 바이럴 마케팅</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">반경 3km 내 거주민을 겨냥한 AI 숏폼 콘텐츠와 지역 커뮤니티 타깃 광고를 사전 집행합니다.</p>
+            </div>
+            <div class="bg-[#FAF9F6] p-6 rounded-xl border border-stone-200">
+              <div class="font-mono text-2xl font-black text-amber-700 mb-3">04</div>
+              <h4 class="text-base font-bold text-slate-900 mb-2">현장 운영 대행 & 데이터 리포트</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">전문 매니저가 현장 판매를 전담하고, 팝업 종료 후 가격 저항선 및 피드백 분석 보고서를 납품합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Target Audience Matrix & Competitive Value (03. 타깃 고객 매트릭스 및 차별화 가치) -->
+    <section id="target-matrix" class="py-20 lg:py-28 bg-[#FAF9F6] border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">CHAPTER 03</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 [text-wrap:balance]">
+            03. 타깃 고객 매트릭스 및 차별화 가치
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            청년 창업가(B2C), 지자체·공공도서관(B2G), 지역 상권·유통사(B2B)가 상생할 수 있는 명확한 가치를 제공합니다.
+          </p>
+        </div>
+
+        <!-- 3-Column Target Cards Container -->
+        <div id="targetCardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Strategy Workshop Visual Showcase -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div class="lg:col-span-5 h-[260px] lg:h-full">
+              <img src="/src/assets/images/service_strategy_workshop_1794010976985.jpg" alt="공간 활성화 전략 워크숍" class="w-full h-full object-cover" />
+            </div>
+            <div class="lg:col-span-7 p-8 sm:p-10">
+              <div class="text-xs font-semibold text-amber-800 mb-2">COMPETITIVE ADVANTAGE</div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">기존 대행사 및 일반 팝업과의 3대 핵심 차별화</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">1</div>
+                  <div>
+                    <h4 class="text-sm font-bold text-slate-900">공공 유휴 공간 활용으로 임대료 90% 이상 절감</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">지자체 도서관 및 청년 공간 협약으로 비싼 상가 보증금 없이 초저비용 오프라인 테스트베드를 제공합니다.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">2</div>
+                  <div>
+                    <h4 class="text-sm font-bold text-slate-900">생성형 AI & 3D 모듈러를 통한 24시간 초고속 기획</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">수주 후 24시간 내에 3D 부스 시안과 하이퍼로컬 홍보 콘텐츠를 자동 생성하여 즉각적인 실행이 가능합니다.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">3</div>
+                  <div>
+                    <h4 class="text-sm font-bold text-slate-900">현장 대행부터 데이터 실증 리포트까지 턴키 제공</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">창업자가 매장에 상주하지 않아도 전문 인력이 판매를 대행하고, 고객 반응 데이터를 분석한 고도화 리포트를 납품합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Business Model & Simulator (04. 비즈니스 모델 및 지속가능 수익 구조) -->
+    <section id="business-model" class="py-20 lg:py-28 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">CHAPTER 04</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 [text-wrap:balance]">
+            04. 비즈니스 모델 및 지속가능 수익 구조
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            단기 팝업 턴키 기획료, 세일즈 성과 연동 수수료, 그리고 지자체 유휴공간 활성화 정기 위탁 용역을 결합하여
+            안정적인 현금 흐름과 스케일업이 가능한 다각화 BM을 설계했습니다.
+          </p>
+        </div>
+
+        <!-- 3 Revenue Stream Cards Container -->
+        <div id="revenueStreamsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Interactive Revenue Simulator -->
+        <div class="bg-[#FAF9F6] rounded-2xl border border-stone-200 p-8 sm:p-10 shadow-sm">
+          <div class="max-w-2xl mb-8">
+            <div class="flex items-center gap-2 text-xs font-bold text-amber-800 mb-1">
+              <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>창직 비즈니스 시뮬레이터</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">운영 규모별 예상 연간 매출액 실시간 추산</h3>
+            <p class="text-xs sm:text-sm text-slate-600">슬라이더를 조절하여 월간 팝업스토어 기획 건수와 공공 위탁 사업 수를 변경해 보세요.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Left Sliders -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="bg-white p-5 rounded-xl border border-stone-200">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold text-slate-800">월간 청년 팝업스토어 턴키 대행 건수</label>
+                  <span id="sliderVal1Text" class="text-xs font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">월 3건</span>
+                </div>
+                <input id="sliderCount1" type="range" min="0" max="10" value="3" class="w-full accent-amber-600 cursor-pointer" />
+                <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                  <span>0건</span>
+                  <span id="sliderUnit1Text">기획료: ₩2,500,000/건</span>
+                  <span>10건</span>
+                </div>
+              </div>
+
+              <div class="bg-white p-5 rounded-xl border border-stone-200">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold text-slate-800">월간 팝업 매출 쉐어 참여 팀 수</label>
+                  <span id="sliderVal2Text" class="text-xs font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">월 4팀</span>
+                </div>
+                <input id="sliderCount2" type="range" min="0" max="15" value="4" class="w-full accent-amber-600 cursor-pointer" />
+                <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                  <span>0팀</span>
+                  <span id="sliderUnit2Text">평균 인센티브: ₩800,000/팀</span>
+                  <span>15팀</span>
+                </div>
+              </div>
+
+              <div class="bg-white p-5 rounded-xl border border-stone-200">
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold text-slate-800">지자체 공공 유휴공간 정기 위탁 계약 수</label>
+                  <span id="sliderVal3Text" class="text-xs font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">연 2건 (분기별)</span>
+                </div>
+                <input id="sliderCount3" type="range" min="0" max="5" value="2" class="w-full accent-amber-600 cursor-pointer" />
+                <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                  <span>0건</span>
+                  <span id="sliderUnit3Text">분기 용역: ₩12,000,000/건</span>
+                  <span>5건</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Results -->
+            <div class="lg:col-span-5 bg-slate-900 text-white p-7 sm:p-8 rounded-2xl flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-medium text-amber-400 mb-2">추정 연간 총 사업화 규모</div>
+                <div id="simTotalAnnual" class="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-white mb-6 tabular-nums">
+                  ₩152,400,000
+                </div>
+
+                <div class="space-y-3 pt-4 border-t border-slate-800 text-xs">
+                  <div class="flex justify-between text-slate-300">
+                    <span>팝업 턴키 대행 연 매출</span>
+                    <span id="simPart1" class="font-mono text-white tabular-nums font-semibold">₩90,000,000</span>
+                  </div>
+                  <div class="flex justify-between text-slate-300">
+                    <span>현장 매출 쉐어 인센티브</span>
+                    <span id="simPart2" class="font-mono text-white tabular-nums font-semibold">₩38,400,000</span>
+                  </div>
+                  <div class="flex justify-between text-slate-300">
+                    <span>지자체 공공 위탁 사업 연 매출</span>
+                    <span id="simPart3" class="font-mono text-white tabular-nums font-semibold">₩24,000,000</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-4 border-t border-slate-800">
+                <button id="btnSimInquiry" class="w-full py-3 text-xs font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-colors flex items-center justify-center gap-1.5">
+                  <span>이 비즈니스 모델로 협업 제안하기</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 3-Year Execution Roadmap (05. 3개년 단계별 실행 로드맵) -->
+    <section id="roadmap" class="py-20 lg:py-28 bg-[#FAF9F6] border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">CHAPTER 05</div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4 [text-wrap:balance]">
+            05. 3개년 단계별 실행 로드맵
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            공공도서관 로비 1호 팝업 실증에서 시작하여 지자체 정기 거버넌스 확장, 그리고 전국 단위 팝업 프랜차이즈 및 AI 공간 SaaS로 도약하는 36개월 중장기 액션 플랜입니다.
+          </p>
+        </div>
+
+        <!-- Phase Selector Buttons -->
+        <div id="roadmapPhaseButtonsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Selected Phase Detail Card -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-8 sm:p-10 shadow-sm mb-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-2 text-xs font-bold text-amber-800 mb-2">
+                <svg class="w-4 h-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>
+                <span id="activePhaseHeader">Phase 01 중점 목표 및 세부 마일스톤</span>
+              </div>
+              <h3 id="activePhaseTitle" class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                공공도서관 및 청년공간 팝업 표준 모델 실증
+              </h3>
+
+              <div class="bg-[#FAF9F6] p-4 rounded-xl border border-stone-200 mb-6 text-sm text-slate-700 font-medium">
+                <span class="font-bold text-slate-900">핵심 비전: </span>
+                <span id="activePhaseGoal">지역 내 공공도서관 로비 및 청년센터 10개소 팝업 성공 레퍼런스 확보 및 표준 매뉴얼 저작권 등록</span>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <div class="text-xs font-bold text-slate-900">주요 실행 과제 (Key Milestones)</div>
+                <div id="activePhaseMilestones" class="space-y-2"></div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-900 text-white flex items-center justify-between">
+                <div>
+                  <div class="text-[11px] text-amber-400 font-semibold">단계별 정량 KPI 달성 목표</div>
+                  <div id="activePhaseKpi" class="text-sm font-bold text-white mt-0.5 font-mono">
+                    파일럿 팝업 10회 운영, 참여 청년창업팀 누적 매출 5,000만 원 달성
+                  </div>
+                </div>
+                <svg class="w-6 h-6 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="rounded-xl overflow-hidden border border-stone-200 shadow-md">
+                <img src="/src/assets/images/service_future_launch_1794010977200.jpg" alt="창직 비전 런칭 세션" class="w-full h-[280px] sm:h-[320px] object-cover" />
+                <div class="p-4 bg-white border-t border-stone-100">
+                  <div class="text-xs font-bold text-slate-900">비전 런칭 세미나 및 공공·산학 네트워킹</div>
+                  <div class="text-[11px] text-slate-500 mt-0.5">지역 유휴 공간 재생 포럼 및 청년 창업가 네트워킹 데이</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQ Section -->
+    <section class="py-20 lg:py-24 bg-white border-b border-stone-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="text-xs font-semibold uppercase tracking-wider text-amber-800 mb-2">FREQUENTLY ASKED QUESTIONS</div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">창직 프로젝트 FAQ</h2>
+          <p class="text-sm sm:text-base text-slate-600">새로운 직업의 정의, 사업화 가능성 및 협업에 관해 자주 묻는 질문들을 모았습니다.</p>
+        </div>
+
+        <div id="faqAccordionContainer" class="space-y-4">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Quiet Professional Footer -->
+  <footer class="bg-stone-900 text-stone-300 py-16 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            <span class="font-extrabold text-white tracking-tight text-lg">CREATE JOB STUDIO</span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-sm">
+            미래 신직업 발굴, 창직 보고서 체계화, 그리고 비즈니스 모델 런칭을 위한 전문 창직 인큐베이팅 & 랜딩페이지 플랫폼입니다.
+          </p>
+          <div class="text-xs text-stone-400 space-y-1">
+            <div>연구 책임: <span id="footerCreatorName" class="text-stone-300">이아영 창직 기획가</span></div>
+            <div>소속 기관: <span id="footerInstitution" class="text-stone-300">국립한밭대학교 창직 이노베이션 프로젝트</span></div>
+            <div>공식 문의: <span class="text-stone-300 font-mono">aeyoung_yi@edu.hanbat.ac.kr</span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">창직 프레임워크</div>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#overview" class="hover:text-white transition-colors">01. 창직 배경 및 필요성</a></li>
+            <li><a href="#core-tasks" class="hover:text-white transition-colors">02. 4대 핵심 직무 체계</a></li>
+            <li><a href="#target-matrix" class="hover:text-white transition-colors">03. 타깃 고객 매트릭스</a></li>
+            <li><a href="#business-model" class="hover:text-white transition-colors">04. 비즈니스 수익 모델</a></li>
+            <li><a href="#roadmap" class="hover:text-white transition-colors">05. 3개년 실행 로드맵</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-4">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">프로젝트 협력 & 문의</div>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            신직업 개발 자문, 산학협력 프로젝트, 공공 도서관 유휴공간 팝업 제휴 및 창직 특강을 희망하시는 경우 언제든 문의해 주세요.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2 pt-1">
+            <button id="btnFooterInquiry" class="px-4 py-2 text-xs font-semibold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors text-center">
+              상담 및 제휴 신청
+            </button>
+            <button id="btnFooterCustomizer" class="px-4 py-2 text-xs font-medium text-stone-200 bg-stone-800 hover:bg-stone-700 border border-stone-700 rounded-lg transition-colors text-center">
+              내 보고서 직접 수정
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <div>
+          &copy; <span id="copyrightYear">2026</span> 국립한밭대학교 창직 프로젝트. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4 text-stone-400">
+          <span>국립한밭대학교 창직 이노베이션</span>
+          <span aria-hidden="true">·</span>
+          <span>지식재산권 보호 규정 준수</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal 1: Report Customizer Modal -->
+  <div id="modalCustomizer" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm overflow-y-auto">
+    <div class="bg-white rounded-2xl border border-stone-200 shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col my-8 overflow-hidden">
+      <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-[#FAF9F6]">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">창직보고서 실시간 반영 및 편집기</h3>
+            <p class="text-xs text-slate-500">원클릭으로 추천 프리셋을 선택하거나, 본인의 [창직보고서] 내용을 입력하여 사이트 전체를 즉각 변경합니다.</p>
+          </div>
+        </div>
+        <button id="btnCloseCustomizer" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Mode Tabs -->
+      <div class="flex border-b border-stone-200 px-6 pt-3 bg-stone-50 gap-4">
+        <button id="tabCustomizerPresets" class="pb-3 text-xs sm:text-sm font-semibold border-b-2 border-slate-900 text-slate-900 flex items-center gap-1.5">
+          추천 창직보고서 프리셋 선택
+        </button>
+        <button id="tabCustomizerEdit" class="pb-3 text-xs sm:text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5">
+          내 보고서 직접 입력 / 내용 수정
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 overflow-y-auto flex-1 text-slate-800">
+        <div id="customizerAlert" class="hidden mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center gap-2">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span id="customizerAlertText">랜딩페이지에 보고서 내용이 성공적으로 반영되었습니다!</span>
+        </div>
+
+        <!-- Presets Container -->
+        <div id="presetsListSection" class="space-y-4">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Edit Form Section -->
+        <form id="customReportForm" class="hidden space-y-5">
+          <div class="text-xs text-slate-500 mb-2">
+            작성하신 [창직보고서]의 직업명, 한 줄 정의, 창직 배경, 핵심 직무를 직접 입력해 보세요.
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">신직업 명칭 (Job Title) *</label>
+              <input id="inputJobTitle" type="text" required class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">영문 직업명 (English Title) *</label>
+              <input id="inputEnglishTitle" type="text" required class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">창직자 성명 *</label>
+              <input id="inputCreatorName" type="text" required class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">소속 기관 / 학교 *</label>
+              <input id="inputInstitution" type="text" required class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-800 mb-1">직업 한 줄 정의 / 가치 제안 (One-Line Pitch) *</label>
+            <textarea id="inputPitch" rows="2" required class="w-full text-xs sm:text-sm px-3.5 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-800 mb-1">창직 배경 및 기존 시장 문제점 (Problem Statement)</label>
+            <textarea id="inputProblem" rows="2" class="w-full text-xs sm:text-sm px-3.5 py-2 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">1년차 목표 사업화 매출</label>
+              <input id="inputRevenue" type="text" class="w-full text-xs px-3.5 py-2 rounded-lg border border-stone-300" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">시장 타당성 검증률</label>
+              <input id="inputValidation" type="text" class="w-full text-xs px-3.5 py-2 rounded-lg border border-stone-300" />
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center justify-end gap-3">
+            <button id="btnCopySummary" type="button" class="px-4 py-2.5 text-xs font-medium text-slate-700 bg-stone-100 hover:bg-stone-200 rounded-lg transition-colors flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <span>보고서 요약 복사</span>
+            </button>
+            <button type="submit" class="px-5 py-2.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors shadow-sm">
+              랜딩페이지에 즉시 반영하기
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="p-4 px-6 border-t border-stone-200 bg-[#FAF9F6] flex justify-between items-center text-xs text-slate-500">
+        <span>입력하신 창직보고서 사양에 맞춰 전체 레이아웃과 텍스트가 즉각 연동됩니다.</span>
+        <button id="btnCloseCustomizerBottom" class="px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-950">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Inquiry & Consultation Modal -->
+  <div id="modalInquiry" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm overflow-y-auto">
+    <div class="bg-white rounded-2xl border border-stone-200 shadow-2xl w-full max-w-xl my-8 overflow-hidden">
+      <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-[#FAF9F6]">
+        <div>
+          <div class="text-xs font-semibold text-amber-800 uppercase tracking-wide">PROJECT INQUIRY & PARTNERSHIP</div>
+          <h3 id="inquiryModalTitle" class="text-lg font-bold text-slate-900 mt-0.5">프로젝트 상담 신청</h3>
+        </div>
+        <button id="btnCloseInquiry" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-6">
+        <!-- Success Card -->
+        <div id="inquirySuccessCard" class="hidden text-center py-6">
+          <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2">상담 신청이 정상적으로 접수되었습니다</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
+            접수 번호: <span id="inquirySubmittedCode" class="font-mono font-bold text-slate-900">INQ-782914</span><br />
+            남겨주신 이메일로 창직 세부 제안서 요약본과 사전 미팅 일정을 24시간 이내에 회신드리겠습니다.
+          </p>
+          <button id="btnInquirySuccessDone" class="w-full py-3 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-colors">
+            확인 및 창 닫기
+          </button>
+        </div>
+
+        <!-- Form Card -->
+        <form id="inquiryForm" class="space-y-4">
+          <div id="inquiryErrorMsg" class="hidden p-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs"></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">성함 / 직함 *</label>
+              <input id="inqName" type="text" required placeholder="홍길동 대표" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">소속 기업 / 기관명</label>
+              <input id="inqOrg" type="text" placeholder="(주)로컬이노베이션 / 공공도서관" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">이메일 주소 *</label>
+              <input id="inqEmail" type="email" required placeholder="contact@domain.com" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-800 mb-1">연락처</label>
+              <input id="inqPhone" type="tel" placeholder="010-1234-5678" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-800 mb-1">의뢰 및 협업 구분 *</label>
+            <select id="inqType" class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+              <option value="공공 유휴공간 팝업스토어 기획 의뢰">공공 유휴공간 팝업스토어 기획 의뢰</option>
+              <option value="지자체 청년 창업 활성화 위탁 사업">지자체 청년 창업 활성화 위탁 사업 제휴</option>
+              <option value="청년 창업가 팝업 참여 및 테스트 신청">청년 창업가 팝업 참여 및 테스트 신청</option>
+              <option value="창직 워크숍 및 대학 특강 의뢰">창직 워크숍 및 대학 특강 의뢰</option>
+              <option value="기타 제휴 및 라이선싱 문의">기타 제휴 및 라이선싱 문의</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-800 mb-1">문의 및 협업 희망 내용 *</label>
+            <textarea id="inqMessage" rows="3" required placeholder="희망하시는 공공장소(도서관 로비 등), 테스트할 아이템 및 일정 계획을 자유롭게 적어주세요." class="w-full text-xs sm:text-sm px-3.5 py-2.5 rounded-lg border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+            <span>프로젝트 상담 신청서 제출하기</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standalone Integrated Application Script -->
+  <script>
+    // PRESETS DATA
+    const REPORT_PRESETS = {
+      ai_popup_planner: {
+        id: 'ai_popup_planner',
+        jobTitle: 'AI 로컬 팝업스토어 기획자',
+        englishTitle: 'AI Local Pop-up Store Director',
+        oneLinePitch: '예비 청년 창업가들이 비싼 임대료 없이 자신의 아이템을 테스트할 수 있도록, 도서관 로비나 청년 공간 등 지역 내 유휴 공간을 단기 팝업스토어로 기획하고 운영을 대행하는 신직업',
+        fieldCategory: '공간 활성화 · 로컬 커머스 마케팅 & AI 융합',
+        creatorName: '이아영 창직 기획가',
+        institution: '국립한밭대학교 창직 이노베이션 프로젝트',
+        background: {
+          problemStatement: '초기 청년 창업가들이 신제품과 브랜드를 오프라인 시장에서 검증하고자 할 때, 높은 상가 보증금과 월 임대료, 수백만 원에 달하는 인테리어 고정비는 치명적인 데스밸리(Death Valley) 요인이 됩니다. 반면 지자체 산하 공공도서관 로비, 청년센터, 주민 커뮤니티 공간 등 우수한 접근성을 가진 유휴 공간들은 주말 및 특정 시간대에 활기 없이 방치되고 있습니다.',
+          socialChange: '온라인 이커머스의 광고비 급증으로 오프라인 체험형 팝업의 중요성이 커진 가운데, 생성형 AI와 상권 유동인구 빅데이터 기술의 발달로 1인 창직가도 대기업 수준의 3D 공간 시뮬레이션과 초지역(Hyper-local) 타깃 마케팅을 신속하게 실행할 수 있는 기술적 환경이 갖추어졌습니다.',
+          marketOpportunity: '청년 창업 생태계의 팝업 테스트 수요가 폭발하고 있으며, 지자체와 공공기관 역시 청년 일자리 창출 및 공공시설 유휴 공간 활성화를 위한 매칭 지원 사업을 전폭 확대하고 있어 민관 양방향 시장이 고속 팽창하고 있습니다.',
+          humanValue: 'AI 알고리즘이 예측한 상권 데이터 위에 청년 창업가의 브랜드 철학을 담아내고, 지역 주민과의 정서적 유대감을 엮어내는 인간 중심의 공간 연출과 따뜻한 현장 운영 대행의 가치입니다.'
+        },
+        coreTasks: [
+          {
+            number: '01',
+            title: 'AI 상권 빅데이터 분석 및 최적 공공 유휴 공간 매칭',
+            subtitle: '도서관 로비·청년센터·공공 복합관의 시간대별 유동인구 및 방문자 연령대 정밀 분석',
+            description: '지자체 인허가 규정을 준수하면서 청년 창업가의 타깃 고객과 가장 부합하는 지역 내 유휴 공공 공간을 AI 공간 매칭 알고리즘으로 발굴하고 공간 사용 협약을 체결합니다.',
+            deliverables: ['시간대별 유동인구 AI 분석 보고서', '공공 유휴 공간 적합도 평가표', '지자체 시설 사용 승인 서식'],
+            tools: ['AI Foot-Traffic Geolocation', 'Local Demographic Analyzer', 'Spatial Matchmaking Matrix']
+          },
+          {
+            number: '02',
+            title: '생성형 AI 기반 모듈러 팝업 부스 설계 & 3D 공간 렌더링',
+            subtitle: '재사용 가능한 친환경 모듈러 집기 기반의 24시간 초고속 공간 연출 시뮬레이션',
+            description: '공공시설 훼손 없이 설치와 철거가 2시간 내에 가능한 모듈러 전시 집기 배치를 생성형 AI 툴로 3D 렌더링하여 사전에 가상 동선과 비주얼 톤앤매너를 시뮬레이션합니다.',
+            deliverables: ['3D 가상 팝업스토어 렌더링 시안', '친환경 모듈러 집기 배치도', '현장 설치/철거 표준 매뉴얼'],
+            tools: ['Generative Spatial AI', 'Blender / SketchUp Pro', 'Modular Exhibition Kit']
+          },
+          {
+            number: '03',
+            title: '하이퍼로컬 AI 타깃 마케팅 & 숏폼 홍보 자동화',
+            subtitle: '지역 주민·청년 대상 위치기반 SNS 타깃 광고 및 바이럴 콘텐츠 생성',
+            description: '팝업 오픈 전 반경 3km 이내의 거주민과 유동인구를 타깃으로 AI가 지역 특화 홍보 카피, 카드뉴스, 인스타그램 릴스를 자동 제작하여 팝업 방문율을 극대화합니다.',
+            deliverables: ['동네 기반 하이퍼로컬 광고 카피 10종', 'AI 제작 숏폼 영상 및 홍보 포스터', '사전 예약 및 방문 이벤트 기획안'],
+            tools: ['Ad Copywriting AI', 'Short-form Video Generator', 'Hyper-local SNS Ads Engine']
+          },
+          {
+            number: '04',
+            title: '팝업 현장 운영 대행 및 AI 실증 피드백 리포트 발행',
+            subtitle: '현장 세일즈·고객 응대 전담 및 소비자 반응 데이터 기반의 BM 고도화 리포트 제공',
+            description: '창업자가 매장에 상주하지 않아도 전문 매니저가 제품 판매와 고객 설문을 대행하며, 팝업 종료 후 방문객 체류 시간, 선호 제품군, 가격 저항선 데이터를 AI로 분석한 실증 리포트를 발행합니다.',
+            deliverables: ['현장 판매 및 결제 정산 보고서', 'AI 고객 반응 분석 및 개선 권고안', '후속 사업화/판로 연계 로드맵'],
+            tools: ['Smart Cloud POS System', 'Customer Sentiment NLP', 'Market Validation Report Engine']
+          }
+        ],
+        targets: [
+          {
+            category: 'B2C 청년 창업가',
+            targetName: '시제품 및 아이템을 보유한 초기 청년 창업가 및 로컬 메이커',
+            painPoint: '비싼 오프라인 매장 임대료와 인테리어 비용 부담으로 시장성 검증 기회 부족',
+            solution: '공공 유휴 공간을 활용한 3일~1주일 단기 팝업 턴키 기획, 부스 세팅 및 운영 대행',
+            expectedOutcome: '초기 런칭 비용 90% 이상 절감, 실구매 고객 500명 이상의 피드백 확보'
+          },
+          {
+            category: 'B2G 지자체·공공기관',
+            targetName: '시·구립 공공도서관, 청년공간 운영재단, 도시재생과',
+            painPoint: '로비 및 복도 등 유휴 공공 공간의 방치와 청년 일자리 창출 정책의 가시적 성과 부재',
+            solution: '시민에게 볼거리와 청년 창업 아이템을 소개하는 정기 로컬 팝업 빌리지 위탁 운영',
+            expectedOutcome: '공공시설 방문객 만족도 45% 증가, 지역 청년 창업팀 15개사 인큐베이팅 달성'
+          },
+          {
+            category: 'B2B 지역 상권·유통',
+            targetName: '원도심 상인회, 로컬 카페, 복합문화공간 운영사',
+            painPoint: '고착화된 매장 구성으로 인한 젊은 층 방문객 감소 및 집객력 약화',
+            solution: '매주 신선한 청년 창업 팝업스토어를 샵인샵(Shop-in-Shop) 형태로 순환 유치',
+            expectedOutcome: '매장 주말 유동인구 65% 증가, 팝업을 통한 연계 식음료 매출 22% 신장'
+          }
+        ],
+        revenueStreams: [
+          {
+            type: '단기 팝업 턴키 기획료',
+            name: '청년 팝업스토어 원스톱 기획 및 운영 대행',
+            pricing: '건당 ₩2,500,000 ~ ₩4,800,000',
+            description: '공간 섭외, 3D 모듈러 부스 세팅, 하이퍼로컬 AI 마케팅, 현장 운영 및 데이터 피드백 리포트 일괄 제공',
+            unit: '3일~1주일 건당',
+            baseAmount: 2500000
+          },
+          {
+            type: '매출 연동 성과 수수료',
+            name: '팝업 현장 판매 매출 쉐어(RS)',
+            pricing: '현장 총 매출의 8% ~ 12%',
+            description: '청년 창업가의 초기 고정비 부담을 낮추고, 팝업 세일즈 성과에 비례하여 수취하는 상생형 인센티브 수익',
+            unit: '매출 연동',
+            baseAmount: 800000
+          },
+          {
+            type: '지자체 공공 위탁 용역',
+            name: '공공도서관 · 청년센터 유휴공간 활성화 정기 사업',
+            pricing: '분기당 ₩12,000,000 ~ ₩28,000,000',
+            description: '지자체 및 공공기관과 분기/연간 단위 계약을 체결하여 청년 팝업스토어를 정기적으로 기획·총괄 운영하는 공공 용역 수익',
+            unit: '분기당',
+            baseAmount: 12000000
+          }
+        ],
+        roadmap: [
+          {
+            phase: 'Phase 01',
+            period: '1년차 (씨앗기 · 검증)',
+            title: '공공도서관 및 청년공간 팝업 표준 모델 실증',
+            goal: '지역 내 공공도서관 로비 및 청년센터 10개소 팝업 성공 레퍼런스 확보 및 표준 매뉴얼 저작권 등록',
+            milestones: [
+              '국립한밭대 및 대전·충청권 공공도서관 로비 1호 팝업 성공적 런칭',
+              '친환경 모듈러 팝업 키트 3종 프로토타입 제작 및 재사용 검증',
+              'AI 상권 분석 기반 고객 반응 피드백 리포트 서식 저작권 출원'
+            ],
+            kpi: '파일럿 팝업 10회 운영, 참여 청년창업팀 누적 매출 5,000만 원 달성'
+          },
+          {
+            phase: 'Phase 02',
+            period: '2년차 (성장기 · 확장)',
+            title: '지자체 공공 거버넌스 협약 및 매칭 플랫폼 베타 런칭',
+            goal: '수도권/충청권 지자체 5곳과 유휴 공간 활성화 정기 협약 체결 및 온라인 팝업 매칭 시스템 오픈',
+            milestones: [
+              '도서관·주민센터·지하철 역사 등 유휴 거점 30개소 등록 확보',
+              '예비 창업가-유휴 공간 자동 매칭 웹 플랫폼(BETA) 출시',
+              '지자체 청년 창업 활성화 공공 수탁 사업 3건 수주'
+            ],
+            kpi: '연 매출 1억 8천만 원 달성, 청년 창업가 80팀 팝업 지원'
+          },
+          {
+            phase: 'Phase 03',
+            period: '3년차 (도약기 · 스케일업)',
+            title: '전국 단위 유휴 공간 팝업 프랜차이즈 및 AI 공간 SaaS화',
+            goal: '전국 공공·민간 유휴 공간을 아우르는 대한민국 대표 팝업스토어 브랜드 생태계 구축',
+            milestones: [
+              'AI 로컬 팝업스토어 기획자 민간자격 양성 과정 개설 (기획자 50명 배출)',
+              '전국 5개 광역시도 지사 설립 및 프랜차이즈 모듈 공급',
+              '민간 대형 쇼핑몰 및 백화점 유휴 공간과 청년 브랜드 연계 판로 확장'
+            ],
+            kpi: '연 매출 4억 5천만 원 초과, 누적 팝업스토어 300회 돌파'
+          }
+        ],
+        stats: {
+          marketValidation: '97.4%',
+          targetMarketSize: '₩2,400억',
+          expectedFirstYearRevenue: '₩9,200만',
+          partnerCount: '16개 공공 거점'
+        },
+        heroImage: '/src/assets/images/hero_local_popup_store_1794011341517.jpg',
+        serviceImage: '/src/assets/images/service_popup_modular_design_1794011341495.jpg'
+      },
+      ai_curator: {
+        id: 'ai_curator',
+        jobTitle: 'AI 휴먼 인터랙션 큐레이터',
+        englishTitle: 'AI Human Interaction Curator',
+        oneLinePitch: '기술 중심의 인공지능 결과물을 인간의 감성, 언어적 맥락, 윤리적 기준에 맞추어 최적화하는 융합 창직 모델',
+        fieldCategory: 'AI 융합 신산업 & 크리에이티브',
+        creatorName: '이아영 창직 연구원',
+        institution: '국립한밭대학교 창직 이노베이션 프로젝트',
+        background: {
+          problemStatement: '생성형 AI의 급격한 보급으로 텍스트·시각 콘텐츠는 양산되고 있으나, 인간 중심의 공감 결여, 할루시네이션(환각) 및 브랜드 톤앤매너 불일치 문제로 실무 도입의 신뢰 장벽이 발생하고 있습니다.',
+          socialChange: '단순 기능 코딩이나 일반 프롬프트 작성을 넘어, AI 시스템과 사용자 사이의 감성적 조율(Tuning)과 윤리적 검증을 전담할 전문 직업군의 사회적 요구가 급증하고 있습니다.',
+          marketOpportunity: '기업의 AI 전환(AX) 과정에서 고객 경험(CX)을 저해하지 않고 브랜드 정체성을 유지하기 위한 특화 큐레이션 시장이 연평균 38% 이상 고속 성장 중입니다.',
+          humanValue: '기계가 흉내 낼 수 없는 인간 고유의 문화적 직관, 미세한 감정선 해석, 사회적 맥락에 기반한 의사결정을 결합하여 안전하고 따뜻한 기술 경험을 완성합니다.'
+        },
+        coreTasks: [
+          {
+            number: '01',
+            title: '휴먼 센트릭 AI 프롬프트 아키텍처 설계',
+            subtitle: '인간의 자연스러운 화법과 감정 뉘앙스를 반영하는 정밀 프롬프트 구조화',
+            description: '단순 질의응답을 넘어 사용자의 연령대, 정서적 상태, 비즈니스 매너를 고려한 다층적 프롬프트 파이프라인을 구축하고 대화 템플릿을 설계합니다.',
+            deliverables: ['도메인별 특화 시스템 프롬프트 가이드북', '정서적 톤앤매너 매트릭스', '응답 품질 벤치마크 지표'],
+            tools: ['LLM Orchestration', 'Context Memory Design', 'Emotional Vocabulary Ontology']
+          },
+          {
+            number: '02',
+            title: 'AI 산출물 감성·윤리 큐레이션 및 팩트 필터링',
+            subtitle: '생성된 텍스트·비주얼의 편향성 검증 및 브랜드 보이스 동기화',
+            description: 'AI가 생성한 대량의 콘텐츠 중 잠재적 위험 요소를 제거하고, 소비자의 정서적 수용성과 브랜드의 고유 가치에 부합하도록 교정·재가공합니다.',
+            deliverables: ['편향성·환각 스크리닝 체크리스트', '브랜드 보이스 가이드라인', '실시간 검수 프로토콜'],
+            tools: ['Hallucination Auditor', 'Safety & Bias Filter', 'Human-in-the-Loop Workflow']
+          },
+          {
+            number: '03',
+            title: '대화형 에이전트 인터랙션 UX 프로토타이핑',
+            subtitle: '사용자가 심리적 거부감 없이 AI를 동료이자 조력자로 느끼게 하는 경험 설계',
+            description: '챗봇이나 보이스 어시스턴트와의 대화 흐름에서 느껴지는 기계적 이질감을 해소하는 상호작용 시나리오를 개발합니다.',
+            deliverables: ['사용자 여정 맵(Journey Map)', '시나리오 와이어프레임', 'A/B 테스트 반응 분석 보고서'],
+            tools: ['Figma Interaction Prototyping', 'User Voice Flowchart', 'Conversational UX Kit']
+          },
+          {
+            number: '04',
+            title: '조직 맞춤형 AI 협업 리터러시 코칭 & 교육',
+            subtitle: '실무자가 AI를 창의적 파트너로 활용할 수 있도록 돕는 실전형 창직 워크숍',
+            description: '기업 및 교육기관 임직원을 대상으로, AI 툴의 기능 습득을 넘어 인간 중심의 비판적 사고와 창직적 기획 역량을 기르는 커리큘럼을 운영합니다.',
+            deliverables: ['실무 맞춤형 워크북', '사례 중심 핸즈온 세션', '사후 역량 평가 리포트'],
+            tools: ['Curator Mentoring Toolkit', 'Prompt Evaluation Board', 'Interactive LMS']
+          }
+        ],
+        targets: [
+          {
+            category: 'B2B 기업',
+            targetName: 'AI 고객 상담 및 콘텐츠 도입 중견/스타트업',
+            painPoint: 'AI 챗봇 도입 후 어색한 말투와 오답으로 인한 고객 이탈 및 브랜드 신뢰도 하락',
+            solution: '기업 전용 휴먼 톤앤매너 튜닝 및 윤리 검수 파이프라인 맞춤 구축 컨설팅',
+            expectedOutcome: '고객 만족도(CSAT) 28% 상승, 오답 민원 발생률 85% 감축'
+          },
+          {
+            category: 'B2C 개인',
+            targetName: '1인 창작자, 지식 창업가 및 예비 창직가',
+            painPoint: 'AI 도구를 사용해도 획일적이고 개성 없는 결과물만 나와 경쟁력 확보 곤란',
+            solution: '1:1 퍼스널 브랜드 프롬프트 큐레이션 및 나만의 지식 자산화 전략 멘토링',
+            expectedOutcome: '독창적 지식 콘텐츠 발간 주기 3배 단축, 유료 독자 전환율 42% 증가'
+          },
+          {
+            category: 'B2G 공공·산학',
+            targetName: '대학 산학협력단, 청년 일자리 진흥 기관, 지자체',
+            painPoint: '기존의 취업 중심 지원책 한계 및 미래형 신직업 발굴 모델 부재',
+            solution: '대학생·청년 대상 AI 융합 창직 캠프 운영 및 창직 보고서 인큐베이팅',
+            expectedOutcome: '신직업 발굴 프로젝트 100% 수료, 실전 포트폴리오 확보'
+          }
+        ],
+        revenueStreams: [
+          {
+            type: '프로젝트형',
+            name: 'AI 브랜드 인터랙션 큐레이션 컨설팅',
+            pricing: '프로젝트당 ₩3,500,000 ~ ₩12,000,000',
+            description: '기업의 AI 에이전트 도입 단계에서 대화 시나리오, 감성 필터, 윤리 매트릭스를 전담 구축하는 핵심 수수료',
+            unit: '건당',
+            baseAmount: 3500000
+          },
+          {
+            type: '구독/리테이너형',
+            name: '정기 품질 감수 및 시스템 프롬프트 업데이트',
+            pricing: '월 ₩1,200,000 (기업당)',
+            description: '새로운 LLM 업데이트 및 고객 피드백에 대응하여 대화 품질을 상시 모니터링하고 미세 조정하는 관리형 멤버십',
+            unit: '월정액',
+            baseAmount: 1200000
+          },
+          {
+            type: '교육/라이선스형',
+            name: '창직 워크숍 및 큐레이터 양성 프로그램',
+            pricing: '회당 ₩1,500,000 ~ ₩3,000,000',
+            description: '대학, 지자체, 공공기관 및 대기업 임직원을 위한 실전형 인터랙션 큐레이션 워크숍 및 라이선스 교재 제공',
+            unit: '회당',
+            baseAmount: 1500000
+          }
+        ],
+        roadmap: [
+          {
+            phase: 'Phase 01',
+            period: '1년차',
+            title: '신직업 개념 정립 및 초기 레퍼런스 확보',
+            goal: 'AI 인터랙션 큐레이션 방법론 체계화 및 5건 이상의 파일럿 성공 사례 확보',
+            milestones: ['창직 보고서 저작권 등록', '스타트업 5개사 파일럿 검증', '대학 산학협력 창직 경진대회 입상'],
+            kpi: '파일럿 레퍼런스 5건 완성, 만족도 95% 달성'
+          },
+          {
+            phase: 'Phase 02',
+            period: '2년차',
+            title: '표준 프로세스 확립 및 B2B 정기 파트너십 체결',
+            goal: '공공기관 및 중견기업 대상 정기 리테이너 계약 체결 및 전문 큐레이터 네트워크 양성',
+            milestones: ['창직 솔루션 SaaS형 진단 툴킷 런칭', '청년 창직 아카데미 정규 개설', '정기 구독사 15개 확보'],
+            kpi: '연 매출 1억 2천만 원 달성'
+          },
+          {
+            phase: 'Phase 03',
+            period: '3년차',
+            title: '창직 생태계 플랫폼화 및 글로벌 확장',
+            goal: '인공지능 윤리·감성 평가 표준 인증 시스템 구축 및 다국어 큐레이션 서비스 진출',
+            milestones: ['민간자격 과정 등록', '자동화 큐레이션 플러그인 출시', '창직가 협회 설립'],
+            kpi: '연 매출 3억 원 초과'
+          }
+        ],
+        stats: {
+          marketValidation: '96.8%',
+          targetMarketSize: '₩1,840억',
+          expectedFirstYearRevenue: '₩8,400만',
+          partnerCount: '18개 산학기관'
+        },
+        heroImage: '/src/assets/images/hero_creative_job_studio_1794010976648.jpg',
+        serviceImage: '/src/assets/images/service_digital_curation_1794010977407.jpg'
+      }
+    };
+
+    // State
+    let currentReport = REPORT_PRESETS.ai_popup_planner;
+    let activeTaskIndex = 0;
+    let activeRoadmapIndex = 0;
+
+    // Currency Formatter
+    function formatKRW(val) {
+      return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW', maximumFractionDigits: 0 }).format(val);
+    }
+
+    // Render Full Report to DOM
+    function renderReport(r) {
+      currentReport = r;
+
+      // Header & Banner
+      document.getElementById('mobileJobTitleIndicator').textContent = '현재 모델: ' + r.jobTitle;
+      document.getElementById('bannerJobTitle').textContent = r.jobTitle;
+      document.getElementById('bannerCreatorName').textContent = r.creatorName;
+      document.getElementById('bannerInstitution').textContent = r.institution;
+
+      // Hero
+      document.getElementById('heroCategory').textContent = r.fieldCategory;
+      document.getElementById('heroCreator').textContent = r.creatorName;
+      document.getElementById('heroInstitution').textContent = r.institution;
+      document.getElementById('heroJobTitle').textContent = r.jobTitle;
+      document.getElementById('heroEnglishTitle').textContent = r.englishTitle;
+      document.getElementById('heroPitch').textContent = r.oneLinePitch;
+      document.getElementById('heroImageElement').src = r.heroImage;
+      document.getElementById('heroImageCardTitle').textContent = r.jobTitle + ' 프로젝트 랩';
+
+      // KPIs
+      document.getElementById('kpiValidation').textContent = r.stats.marketValidation;
+      document.getElementById('kpiMarketSize').textContent = r.stats.targetMarketSize;
+      document.getElementById('kpiRevenue').textContent = r.stats.expectedFirstYearRevenue;
+      document.getElementById('kpiPartners').textContent = r.stats.partnerCount;
+
+      // Background
+      document.getElementById('bgProblem').textContent = r.background.problemStatement;
+      document.getElementById('bgSocial').textContent = r.background.socialChange;
+      document.getElementById('bgMarket').textContent = r.background.marketOpportunity;
+      document.getElementById('bgHuman').textContent = r.background.humanValue;
+      document.getElementById('quoteAuthor').textContent = r.creatorName;
+      document.getElementById('quoteInstitution').textContent = r.institution;
+
+      // Core Tasks Tabs
+      renderTaskTabs();
+      renderActiveTask();
+
+      // Target Cards
+      renderTargetCards();
+
+      // Revenue Streams & Simulator
+      renderRevenueStreams();
+      calculateSimulation();
+
+      // Roadmap
+      renderRoadmapTabs();
+      renderActiveRoadmap();
+
+      // Footer
+      document.getElementById('footerCreatorName').textContent = r.creatorName;
+      document.getElementById('footerInstitution').textContent = r.institution;
+      document.getElementById('inquiryModalTitle').textContent = r.jobTitle + ' 프로젝트 상담 신청';
+    }
+
+    function renderTaskTabs() {
+      const container = document.getElementById('tasksTabContainer');
+      container.innerHTML = '';
+      currentReport.coreTasks.forEach((task, idx) => {
+        const isActive = idx === activeTaskIndex;
+        const btn = document.createElement('button');
+        btn.className = 'text-left p-4 rounded-xl border transition-all text-xs sm:text-sm font-medium ' +
+          (isActive ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : 'bg-[#FAF9F6] text-slate-700 border-stone-200 hover:bg-stone-100');
+        btn.innerHTML = `
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-mono font-bold text-xs ${isActive ? 'text-amber-400' : 'text-slate-500'}">${task.number}</span>
+            ${isActive ? '<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>' : ''}
+          </div>
+          <div class="font-semibold line-clamp-2">${task.title}</div>
+        `;
+        btn.onclick = () => {
+          activeTaskIndex = idx;
+          renderTaskTabs();
+          renderActiveTask();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function renderActiveTask() {
+      const task = currentReport.coreTasks[activeTaskIndex] || currentReport.coreTasks[0];
+      document.getElementById('activeTaskNumber').textContent = task.number;
+      document.getElementById('activeTaskTitle').textContent = task.title;
+      document.getElementById('activeTaskSubtitle').textContent = task.subtitle;
+      document.getElementById('activeTaskDesc').textContent = task.description;
+
+      const delivList = document.getElementById('activeTaskDeliverables');
+      delivList.innerHTML = task.deliverables.map(d => `
+        <li class="flex items-start gap-2">
+          <svg class="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          <span>${d}</span>
+        </li>
+      `).join('');
+
+      const toolList = document.getElementById('activeTaskTools');
+      toolList.innerHTML = task.tools.map(t => `
+        <li class="flex items-start gap-2">
+          <span class="text-stone-400 font-mono text-[10px] mt-0.5">#</span>
+          <span>${t}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('taskServiceImage').src = currentReport.serviceImage;
+    }
+
+    function renderTargetCards() {
+      const container = document.getElementById('targetCardsContainer');
+      container.innerHTML = currentReport.targets.map((t, idx) => `
+        <div class="bg-white rounded-2xl p-7 border border-stone-200/90 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-stone-100">
+              <span class="text-xs font-bold text-slate-900 tracking-wide">${t.category}</span>
+              <span class="text-[11px] font-mono text-stone-400">SEGMENT 0${idx + 1}</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-4 leading-snug">${t.targetName}</h3>
+            <div class="mb-4">
+              <div class="text-xs font-semibold text-rose-800 mb-1">당면한 고충 및 Pain Point</div>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${t.painPoint}</p>
+            </div>
+            <div class="mb-4">
+              <div class="text-xs font-semibold text-slate-800 mb-1">창직 솔루션 제공 내역</div>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${t.solution}</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 bg-amber-50/60 -mx-7 -mb-7 p-5 rounded-b-2xl">
+            <div class="text-xs font-bold text-amber-900 mb-1">실증 기대 효과 (Quantitative Outcome)</div>
+            <div class="text-xs font-semibold text-slate-800 leading-relaxed">${t.expectedOutcome}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderRevenueStreams() {
+      const container = document.getElementById('revenueStreamsContainer');
+      container.innerHTML = currentReport.revenueStreams.map((s, idx) => `
+        <div class="bg-[#FAF9F6] rounded-2xl p-7 border border-stone-200/90 hover:border-stone-300 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-200">
+              <span class="text-xs font-bold text-amber-900 bg-amber-100/60 px-2 py-0.5 rounded-md">${s.type}</span>
+              <span class="text-xs font-mono text-slate-500">STREAM 0${idx + 1}</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">${s.name}</h3>
+            <div class="text-lg font-extrabold text-amber-700 font-mono tabular-nums mb-4">${s.pricing}</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">${s.description}</p>
+          </div>
+          <div class="pt-4 border-t border-stone-200 flex items-center justify-between text-xs text-slate-500">
+            <span>과금 단위: ${s.unit}</span>
+            <span class="font-semibold text-slate-700">검증된 시장 단가</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function calculateSimulation() {
+      const count1 = Number(document.getElementById('sliderCount1').value);
+      const count2 = Number(document.getElementById('sliderCount2').value);
+      const count3 = Number(document.getElementById('sliderCount3').value);
+
+      document.getElementById('sliderVal1Text').textContent = '월 ' + count1 + '건';
+      document.getElementById('sliderVal2Text').textContent = '월 ' + count2 + '팀';
+      document.getElementById('sliderVal3Text').textContent = '연 ' + count3 + '건 (분기별)';
+
+      const s1 = currentReport.revenueStreams[0]?.baseAmount || 2500000;
+      const s2 = currentReport.revenueStreams[1]?.baseAmount || 800000;
+      const s3 = currentReport.revenueStreams[2]?.baseAmount || 12000000;
+
+      const part1 = count1 * s1 * 12;
+      const part2 = count2 * s2 * 12;
+      const part3 = count3 * s3;
+      const total = part1 + part2 + part3;
+
+      document.getElementById('simPart1').textContent = formatKRW(part1);
+      document.getElementById('simPart2').textContent = formatKRW(part2);
+      document.getElementById('simPart3').textContent = formatKRW(part3);
+      document.getElementById('simTotalAnnual').textContent = formatKRW(total);
+    }
+
+    function renderRoadmapTabs() {
+      const container = document.getElementById('roadmapPhaseButtonsContainer');
+      container.innerHTML = '';
+      currentReport.roadmap.forEach((phase, idx) => {
+        const isActive = idx === activeRoadmapIndex;
+        const btn = document.createElement('button');
+        btn.className = 'text-left p-6 rounded-2xl border transition-all ' +
+          (isActive ? 'bg-slate-900 text-white border-slate-900 shadow-md' : 'bg-white text-slate-700 border-stone-200 hover:border-stone-300');
+        btn.innerHTML = `
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-mono font-bold ${isActive ? 'text-amber-400' : 'text-amber-800'}">${phase.phase}</span>
+            <span class="text-xs ${isActive ? 'text-slate-300' : 'text-slate-500'}">${phase.period}</span>
+          </div>
+          <h3 class="text-base font-bold mb-1">${phase.title}</h3>
+          <p class="text-xs line-clamp-2 ${isActive ? 'text-slate-300' : 'text-slate-500'}">${phase.goal}</p>
+        `;
+        btn.onclick = () => {
+          activeRoadmapIndex = idx;
+          renderRoadmapTabs();
+          renderActiveRoadmap();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function renderActiveRoadmap() {
+      const p = currentReport.roadmap[activeRoadmapIndex] || currentReport.roadmap[0];
+      document.getElementById('activePhaseHeader').textContent = p.phase + ' 중점 목표 및 세부 마일스톤';
+      document.getElementById('activePhaseTitle').textContent = p.title;
+      document.getElementById('activePhaseGoal').textContent = p.goal;
+      document.getElementById('activePhaseKpi').textContent = p.kpi;
+
+      const mContainer = document.getElementById('activePhaseMilestones');
+      mContainer.innerHTML = p.milestones.map((m, idx) => `
+        <div class="flex items-start gap-3">
+          <div class="w-5 h-5 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">${idx + 1}</div>
+          <span class="text-xs sm:text-sm text-slate-700 leading-relaxed">${m}</span>
+        </div>
+      `).join('');
+    }
+
+    // FAQ items
+    const FAQS = [
+      {
+        q: 'AI 로컬 팝업스토어 기획자는 기존 이벤트 대행사와 무엇이 다른가요?',
+        a: '기존 대형 이벤트 대행사가 수천만 원 규모의 일회성 행사 연출에 치중한다면, 본 창직가는 생성형 AI와 상권 유동인구 빅데이터를 기반으로 24시간 내에 모듈러 부스를 초경량 설계하고, 지자체 공공도서관 및 청년 공간 협약을 통해 보증금 없이 청년 창업가에게 턴키로 실전 테스트베드를 제공한다는 점이 가장 큰 차별점입니다.'
+      },
+      {
+        q: '실제 청년 창업가의 초기 참가 비용 부담은 얼마나 되나요?',
+        a: '일반 상가 입점 시 수천만 원의 보증금과 인테리어 비용이 드는 반면, 본 팝업스토어는 지자체 유휴 공간 지원 및 매출 연동 수수료(RS) 모델을 적용하여 10~20% 수준의 실비만으로 3일~1주일간 500명 이상의 고객에게 직접 판매하고 피드백을 받을 수 있습니다.'
+      },
+      {
+        q: '공공도서관 로비나 청년 공간의 인허가 및 시설 규정은 어떻게 해결하나요?',
+        a: '지자체 청년 일자리 진흥 조례 및 공공시설 유휴 공간 개방 지침에 따라 사전에 시설 사용 협약을 체결하며, 바닥이나 벽면 손상이 일절 없는 100% 자립형 친환경 모듈러 집기를 사용하여 안전 및 소음 규정을 철저히 준수합니다.'
+      },
+      {
+        q: '창직 모델로서의 연간 수익성과 사업 확장 로드맵은 어떻게 되나요?',
+        a: '1년차에는 지역 내 10개 파일럿 팝업과 지자체 위탁 용역으로 9천만 원 이상의 초기 매출을 확보하고, 2년차 매칭 플랫폼 런칭 및 3년차 전국 모듈러 프랜차이즈 확장을 통해 연 4억 5천만 원 규모의 스케일업을 달성하는 구체적 로드맵을 보유하고 있습니다.'
+      }
+    ];
+
+    function renderFaqs() {
+      const container = document.getElementById('faqAccordionContainer');
+      container.innerHTML = FAQS.map((faq, idx) => `
+        <div class="border border-stone-200 rounded-xl overflow-hidden bg-[#FAF9F6]">
+          <button onclick="toggleFaq(${idx})" class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-amber-800">
+            <span class="flex items-center gap-3">
+              <span class="text-amber-700 font-mono text-xs">Q${idx + 1}.</span>
+              <span>${faq.q}</span>
+            </span>
+            <svg id="faqIcon-${idx}" class="w-5 h-5 text-stone-500 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="faqAns-${idx}" class="hidden px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-stone-200/60 bg-white">
+            ${faq.a}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.toggleFaq = function(idx) {
+      const ans = document.getElementById(`faqAns-${idx}`);
+      const icon = document.getElementById(`faqIcon-${idx}`);
+      if (ans.classList.contains('hidden')) {
+        ans.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        ans.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    };
+
+    // Modal Controls
+    const modalCustomizer = document.getElementById('modalCustomizer');
+    const modalInquiry = document.getElementById('modalInquiry');
+
+    function openCustomizer() {
+      modalCustomizer.classList.remove('hidden');
+      renderPresetsList();
+      populateEditForm();
+    }
+    function closeCustomizer() {
+      modalCustomizer.classList.add('hidden');
+    }
+
+    function openInquiry() {
+      modalInquiry.classList.remove('hidden');
+    }
+    function closeInquiry() {
+      modalInquiry.classList.add('hidden');
+      document.getElementById('inquirySuccessCard').classList.add('hidden');
+      document.getElementById('inquiryForm').classList.remove('hidden');
+    }
+
+    // Presets List inside Customizer
+    function renderPresetsList() {
+      const container = document.getElementById('presetsListSection');
+      container.innerHTML = Object.values(REPORT_PRESETS).map(p => {
+        const isSel = p.id === currentReport.id;
+        return `
+          <div onclick="selectPreset('${p.id}')" class="p-5 rounded-xl border cursor-pointer transition-all ${isSel ? 'border-slate-900 bg-amber-50/40 shadow-sm' : 'border-stone-200 hover:border-stone-300 bg-white'}">
+            <div class="flex items-center justify-between mb-1">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-semibold text-amber-800 bg-amber-100/70 px-2 py-0.5 rounded">${p.fieldCategory}</span>
+                <h4 class="font-bold text-slate-900 text-base">${p.jobTitle}</h4>
+              </div>
+              ${isSel ? '<span class="text-xs font-bold text-amber-800">선택됨 ✓</span>' : '<span class="text-xs text-slate-500">선택하기 →</span>'}
+            </div>
+            <div class="text-xs text-slate-500 mb-2 font-mono">${p.englishTitle} · ${p.creatorName} (${p.institution})</div>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${p.oneLinePitch}</p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.selectPreset = function(presetId) {
+      if (REPORT_PRESETS[presetId]) {
+        renderReport(REPORT_PRESETS[presetId]);
+        renderPresetsList();
+        populateEditForm();
+        showAlert('선택하신 창직보고서 모델이 랜딩페이지에 즉시 적용되었습니다!');
+      }
+    };
+
+    function populateEditForm() {
+      document.getElementById('inputJobTitle').value = currentReport.jobTitle;
+      document.getElementById('inputEnglishTitle').value = currentReport.englishTitle;
+      document.getElementById('inputCreatorName').value = currentReport.creatorName;
+      document.getElementById('inputInstitution').value = currentReport.institution;
+      document.getElementById('inputPitch').value = currentReport.oneLinePitch;
+      document.getElementById('inputProblem').value = currentReport.background.problemStatement;
+      document.getElementById('inputRevenue').value = currentReport.stats.expectedFirstYearRevenue;
+      document.getElementById('inputValidation').value = currentReport.stats.marketValidation;
+    }
+
+    function showAlert(msg) {
+      const alert = document.getElementById('customizerAlert');
+      document.getElementById('customizerAlertText').textContent = msg;
+      alert.classList.remove('hidden');
+      setTimeout(() => alert.classList.add('hidden'), 2500);
+    }
+
+    // Event Listeners Setup
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize full UI
+      renderReport(REPORT_PRESETS.ai_popup_planner);
+      renderFaqs();
+
+      // Sliders
+      document.getElementById('sliderCount1').addEventListener('input', calculateSimulation);
+      document.getElementById('sliderCount2').addEventListener('input', calculateSimulation);
+      document.getElementById('sliderCount3').addEventListener('input', calculateSimulation);
+
+      // Customizer buttons
+      document.getElementById('btnOpenCustomizerNav').addEventListener('click', openCustomizer);
+      document.getElementById('btnOpenCustomizerBanner').addEventListener('click', openCustomizer);
+      document.getElementById('btnOpenCustomizerHero').addEventListener('click', openCustomizer);
+      document.getElementById('btnOpenCustomizerMobile').addEventListener('click', openCustomizer);
+      document.getElementById('btnFooterCustomizer').addEventListener('click', openCustomizer);
+      document.getElementById('btnCloseCustomizer').addEventListener('click', closeCustomizer);
+      document.getElementById('btnCloseCustomizerBottom').addEventListener('click', closeCustomizer);
+
+      // Inquiry buttons
+      document.getElementById('btnOpenInquiryNav').addEventListener('click', openInquiry);
+      document.getElementById('btnOpenInquiryHero').addEventListener('click', openInquiry);
+      document.getElementById('btnOpenInquiryMobile').addEventListener('click', openInquiry);
+      document.getElementById('btnFooterInquiry').addEventListener('click', openInquiry);
+      document.getElementById('btnSimInquiry').addEventListener('click', openInquiry);
+      document.getElementById('btnCloseInquiry').addEventListener('click', closeInquiry);
+      document.getElementById('btnInquirySuccessDone').addEventListener('click', closeInquiry);
+
+      // Mobile Menu
+      const mobileDrawer = document.getElementById('mobileMenuDrawer');
+      document.getElementById('btnToggleMobileMenu').addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => mobileDrawer.classList.add('hidden'));
+      });
+
+      // Customizer Tabs
+      const tabPresets = document.getElementById('tabCustomizerPresets');
+      const tabEdit = document.getElementById('tabCustomizerEdit');
+      const listSec = document.getElementById('presetsListSection');
+      const editSec = document.getElementById('customReportForm');
+
+      tabPresets.addEventListener('click', () => {
+        tabPresets.className = 'pb-3 text-xs sm:text-sm font-semibold border-b-2 border-slate-900 text-slate-900 flex items-center gap-1.5';
+        tabEdit.className = 'pb-3 text-xs sm:text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5';
+        listSec.classList.remove('hidden');
+        editSec.classList.add('hidden');
+      });
+
+      tabEdit.addEventListener('click', () => {
+        tabEdit.className = 'pb-3 text-xs sm:text-sm font-semibold border-b-2 border-slate-900 text-slate-900 flex items-center gap-1.5';
+        tabPresets.className = 'pb-3 text-xs sm:text-sm font-semibold border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5';
+        editSec.classList.remove('hidden');
+        listSec.classList.add('hidden');
+        populateEditForm();
+      });
+
+      // Edit Form Submit
+      editSec.addEventListener('submit', (e) => {
+        e.preventDefault();
+        currentReport.jobTitle = document.getElementById('inputJobTitle').value;
+        currentReport.englishTitle = document.getElementById('inputEnglishTitle').value;
+        currentReport.creatorName = document.getElementById('inputCreatorName').value;
+        currentReport.institution = document.getElementById('inputInstitution').value;
+        currentReport.oneLinePitch = document.getElementById('inputPitch').value;
+        currentReport.background.problemStatement = document.getElementById('inputProblem').value;
+        currentReport.stats.expectedFirstYearRevenue = document.getElementById('inputRevenue').value;
+        currentReport.stats.marketValidation = document.getElementById('inputValidation').value;
+
+        renderReport(currentReport);
+        showAlert('수정하신 보고서 내용이 랜딩페이지 전체에 즉시 반영되었습니다!');
+        setTimeout(() => closeCustomizer(), 800);
+      });
+
+      // Copy summary
+      document.getElementById('btnCopySummary').addEventListener('click', () => {
+        const text = `[창직보고서 요약]\n- 직업명: ${currentReport.jobTitle} (${currentReport.englishTitle})\n- 창직자/기관: ${currentReport.creatorName} / ${currentReport.institution}\n- 한 줄 정의: ${currentReport.oneLinePitch}\n- 창직 배경: ${currentReport.background.problemStatement}\n- 1년차 목표 매출: ${currentReport.stats.expectedFirstYearRevenue}`;
+        navigator.clipboard.writeText(text);
+        showAlert('창직보고서 요약문이 클립보드에 복사되었습니다!');
+      });
+
+      // Inquiry Form Submit
+      document.getElementById('inquiryForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('inqEmail').value;
+        const err = document.getElementById('inquiryErrorMsg');
+        if (!email.includes('@') || !email.includes('.')) {
+          err.textContent = '유효한 이메일 주소를 입력해 주세요.';
+          err.classList.remove('hidden');
+          return;
+        }
+        err.classList.add('hidden');
+        const code = 'INQ-' + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById('inquirySubmittedCode').textContent = code;
+        document.getElementById('inquiryForm').classList.add('hidden');
+        document.getElementById('inquirySuccessCard').classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
